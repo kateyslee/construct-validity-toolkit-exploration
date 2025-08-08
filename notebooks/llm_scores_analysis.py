@@ -114,7 +114,7 @@ def analyze_single_model(
                 np.sum(avg_per_item[:, ind] >= 0.5) / len(avg_per_item[:, ind])
                 for ind in range(len(assertion_labels))
             ]
-            fig, ax = plt.subplots(figsize=(15, len(wrapped_labels) * 1))
+            fig, ax = plt.subplots(figsize=(15, len(wrapped_labels) * 1.2))
             ax.barh(wrapped_labels, proportions_1)
             ax.invert_yaxis()
             ax.set_xlabel('Proportion of Score = 1')
@@ -221,7 +221,7 @@ def analyze_across_models(score_tables, explain_tables, assertion_dictionary, pr
             np.sum(avg_across_models[:, ind] >= 0.5) / len(avg_across_models[:, ind])
             for ind in range(len(assertion_labels))
         ]
-        fig, ax = plt.subplots(figsize=(15, len(wrapped_labels) * 1))
+        fig, ax = plt.subplots(figsize=(15, len(wrapped_labels) * 1.2))
         ax.barh(wrapped_labels, proportions_1)
         ax.invert_yaxis()
         ax.set_xlabel('Proportion of Score = 1')
@@ -237,7 +237,7 @@ def analyze_across_models(score_tables, explain_tables, assertion_dictionary, pr
 
     ### Barh: variance per assertion
     if plot:
-        fig, ax = plt.subplots(figsize=(15, len(wrapped_labels) * 1))
+        fig, ax = plt.subplots(figsize=(15, len(wrapped_labels) * 1.2))
         ax.barh(wrapped_labels, variance_per_assertion)
         ax.invert_yaxis()
         ax.set_xlabel('Variance Across Models')
